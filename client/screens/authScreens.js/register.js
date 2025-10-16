@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, Text, View, TextInput, Alert,Image } from 'react
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {RegisterStyles} from '../styles/register.js';
+import {RegisterStyles} from '../../styles/authStyles/register.js';
 const Register = () => {
   const styles=RegisterStyles;
   const navigation = useNavigation();

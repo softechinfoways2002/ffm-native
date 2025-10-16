@@ -1,10 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { Alert, Pressable, StyleSheet, Text, View, TextInput, Image,Button } from 'react-native';
+import { Alert, Pressable, Text, View, TextInput, Image,Button } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Register from './register.js';
-import {LoginStyles} from '../styles/login.js';
+import {LoginStyles} from '../../styles/authStyles/login.js';
 const Login = () => {
   const styles=LoginStyles;
   const [email, setEmail] = useState("");
