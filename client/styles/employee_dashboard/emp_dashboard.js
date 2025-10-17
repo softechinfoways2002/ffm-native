@@ -1,0 +1,88 @@
+import { StyleSheet } from 'react-native';
+import Colors from '../../constants/color';
+export const Dashboard_styles = StyleSheet.create({
+ mainContainer:{
+  flex:1,
+  backgroundColor:Colors.background,
+ },
+ gradientContainer:{
+  height:150,
+  backgroundColor:Colors.primary,
+  justifyContent:'center',
+  alignItems:'center'
+ },
+ gradientContainer2:{
+ height:50,
+ marginTop:30,
+ backgroundColor:Colors.card,
+ borderRadius:15,
+ borderColor:Colors.border,
+ borderWidth:3,
+ width:'80%',
+ position:'absolute'
+ },
+ map:{
+  height:'35%',
+  borderRadius:20,
+  borderTopColor:Colors.border,
+  borderTopWidth:4,
+  marginTop:-65,
+  backgroundColor:Colors.background
+ },
+ userDetails:{
+  flexDirection:'row',
+  justifyContent:'space-between' },
+ image:{
+  width:170,
+  height:170,
+  borderRadius:70,
+  marginTop:-10
+ },
+ userDetailsText:{
+    fontSize:15,
+    margin:5,
+    fontWeight:'bold',
+    marginLeft:10
+ },
+ checkinDetails:{
+    height:'8%',
+    backgroundColor:Colors.background2,
+    width:'80%',
+    borderRadius:10,
+    alignSelf:'center',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center'
+ },
+ checkinDetailsIcon:{
+    marginLeft:3,
+ },
+ checkinbtn:{
+   alignItems:'center',
+   alignSelf:'center',
+   width:'50%',
+   height:'5%',
+   backgroundColor:Colors.primary,
+   marginTop:20,
+   borderRadius:15,
+   justifyContent:'center'
+ },
+ btnText:{
+    fontWeight:'bold',
+    fontSize:16,
+    color:Colors.background
+ },
+ cards:{
+   width:70,
+   height:70,
+   backgroundColor:'#e6f8fdff',
+   borderRadius:10,
+   justifyContent:'center',
+   alignItems:'center'
+ },
+ cardText:{
+color:'skyblue',
+ }
+ 
+  
+});
