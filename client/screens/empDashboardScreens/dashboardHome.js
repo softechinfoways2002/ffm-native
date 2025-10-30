@@ -7,7 +7,6 @@ import Foundation from 'react-native-vector-icons/Foundation';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const DashboardHome = (props) => {
   const styles = Dashboard_styles;
- 
   return (
 <View style={styles.mainContainer}>
 <View style={styles.gradientContainer}>

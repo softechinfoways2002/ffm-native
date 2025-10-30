@@ -29,8 +29,7 @@ const Dashboard = () => {
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
-    >
-      
+    >  
       <Tab.Screen name="Home" component={DashboardHome} />
       <Tab.Screen name="Meetings" component={Meetings} />
       <Tab.Screen name="Claim" component={Reimbursement} />
