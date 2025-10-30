@@ -1,19 +1,45 @@
 import React from "react";
-import { View, Text, FlatList, Pressable, Button, Image, TouchableOpacity } from "react-native";
+import { View, Text, FlatList, Pressable, Button, Image, TouchableOpacity, processColor } from "react-native";
 import Entypo from 'react-native-vector-icons/Entypo';
 import { Dashboard_styles } from "../../styles/employee_dashboard/emp_dashboard.js";
 import Feather from 'react-native-vector-icons/Feather';
 import Foundation from 'react-native-vector-icons/Foundation';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MapView, { Marker } from "react-native-maps";
+import Colors from "../../constants/color.js";
 const DashboardHome = (props) => {
   const styles = Dashboard_styles;
- 
+  const origin = { latitude: 28.6139, longitude: 77.2090 };   // Delhi
+  // const destination = { latitude: 19.0760, longitude: 72.8777 }; // Mumbai
+ const GOOGLE_MAPS_API_KEY=""
   return (
 <View style={styles.mainContainer}>
 <View style={styles.gradientContainer}>
-  <View style={styles.gradientContainer2}></View>
+  <View><Text style={[styles.userDetailsText,{fontSize:22,color:Colors.textLight}]}>Welcome User</Text></View>
 </View>
-<View style={styles.map}></View>
+<View style={styles.map} >
+  <MapView
+  style={{ width: '99%', height:'99%', borderRadius:10 }} 
+  initialRegion={{
+    latitude: 24.0,
+    longitude: 75.0,
+    latitudeDelta: 10,
+    longitudeDelta:10,
+  }}
+>
+        <Marker style={{width:10,width:10}}  coordinate={origin} title="Delhi"></Marker>
+      
+        {/* <Marker style={{width:10,width:10}} coordinate={destination} title="Mumbai"></Marker> */}
+     
+        {/* <MapViewDirections
+          origin={origin}
+          destination={destination}
+          apikey={GOOGLE_MAPS_API_KEY}
+          strokeWidth={5}
+          strokeColor="blue"
+        /> */}
+      </MapView>
+</View>
 <View style={styles.userDetails}>
   <View>
   <Text style={styles.userDetailsText}>Hello, Sahil Kumar!</Text>

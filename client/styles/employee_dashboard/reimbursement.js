@@ -71,14 +71,13 @@ export const Reimbursement_styles=StyleSheet.create({
     {
     margin: 3,
     color:Colors.Dark,
-    fontSize:20,
+    fontSize:16,
     marginRight:5,
     justifyContent:'space-around', 
-    fontWeight:'bold'
+    fontWeight:500
     },
     containerText:{
         fontSize:20,
-        fontWeight:'bold',
         color:Colors.textLight,  
         marginBottom:10 
       },
@@ -89,5 +88,7 @@ export const Reimbursement_styles=StyleSheet.create({
         borderTopWidth:3,
         marginTop:-65,
         height:'80%'
-      }
+      },
+   
+
 })

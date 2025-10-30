@@ -106,5 +106,6 @@ const Login = () => {
         <FontAwesome name="google" size={40} color="#000" style={{ marginHorizontal: 25 }} />
       </View>
     </View>
-    )}
+    );
+  };
 export default Login;

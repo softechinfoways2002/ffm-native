@@ -5,11 +5,9 @@ import Register from "./screens/authScreens.js/register.js"
 import Dashboard from "./screens/empDashboardScreens/dashboard.js"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from "react-native";
-import RaiseReimbursement from "./screens/empDashboardScreens/raiseReimbursement.js";
-import ClaimDetails from "./screens/empDashboardScreens/claimDetails.js";
 const App = () => {
-    const Stack = createNativeStackNavigator();
- 
+const Stack = createNativeStackNavigator();
+   
   return (
 <NavigationContainer>
   <StatusBar barStyle='light-content' backgroundColor="white"  />
@@ -17,8 +15,6 @@ const App = () => {
     <Stack.Screen name="login" component={Login}  />
     <Stack.Screen name="Register" component={Register} />
      <Stack.Screen name="dashboard" component={Dashboard} />
-     <Stack.Screen name="RaiseReimbursement" component={RaiseReimbursement} />
-     <Stack.Screen name='ClaimDetails' component={ClaimDetails}/>
     </Stack.Navigator>
     
 </NavigationContainer>

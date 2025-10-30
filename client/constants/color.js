@@ -1,7 +1,7 @@
 export default {
   primary: '#84b3e9ff',     
   background: '#ffffffff',   
-  card: '#a9d7fdff',         
+  card: '#bfe1fdff',         
   textDark: '#1E2A38',     
   textLight: '#f7fafcff',    
   border: '#b4d0ebff',       

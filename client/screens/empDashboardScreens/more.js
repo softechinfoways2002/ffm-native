@@ -1,10 +1,11 @@
 import React from 'react'
+import { Text, View } from 'react-native'
 
 const More = () => {
   return (
-    <div>
-      
-    </div>
+    <View>
+      <Text>Bhjvx</Text>
+    </View>
   )
 }
 
