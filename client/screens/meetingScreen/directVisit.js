@@ -4,16 +4,19 @@ import { TextInput } from 'react-native-gesture-handler'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { directVisitStyles } from '../../styles/meetings/directVisit';
 import color from '../../constants/color';
+import { styles } from '../../styles/meetings/meetings';
 const directVisit = ({navigation}) => {
-  
   return (
-    <View>
-    <View style={directVisitStyles.container}>
-       <TouchableOpacity onPress={()=>{navigation.goBack()}} style={directVisitStyles.back} >
-      <Ionicons name="chevron-back-outline" size={24} color={"white"}  />
-       </TouchableOpacity>
-      <Text style={directVisitStyles.text}>Direct Visit</Text>
+   <View style={styles.main}>
+    <View style={[styles.gradientContainer, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20 }]}>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+        <Ionicons name="chevron-back-outline" size={24} color={"white"}/>
+        </TouchableOpacity>
+        <Text style={[styles.containerText, { marginLeft: 100}]}>Direct Visit</Text>
+      </View>
     </View>
+    <View style={styles.whiteContainer}>
     <View style={directVisitStyles.starView}>
  <Text style={directVisitStyles.heading}>Company Name</Text>
  <Text style={directVisitStyles.starText}>*</Text>
@@ -54,6 +57,9 @@ const directVisit = ({navigation}) => {
     <Text style={directVisitStyles.buttonText}>START MEETING</Text>
  </TouchableOpacity>
     </View>
+    </View>
   )
 }
 export default directVisit
+
+
