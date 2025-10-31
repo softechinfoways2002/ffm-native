@@ -37,5 +37,4 @@ const App = () => {
     </GestureHandlerRootView>
   );
 };
-
 export default App;

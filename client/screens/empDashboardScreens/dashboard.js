@@ -7,9 +7,7 @@ import Profile from "./profile";
 import Colors from '../../constants/color';
 import More from "./more";
 import Reimbursement from "./reimbursement"
-
 const Tab = createBottomTabNavigator();
-
 const Dashboard = () => {
   return (
     <Tab.Navigator

@@ -5,15 +5,19 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ScheduledMeetingStyles } from '../../styles/meetings/ScheduledMeeting';
 import color from '../../constants/color';
 import { directVisitStyles } from '../../styles/meetings/directVisit';
+import { styles } from '../../styles/meetings/meetings';
 const ScheduledMeeting = ({navigation}) => {
   return (
-    <View>
-    <View style={ScheduledMeetingStyles.container}>
-        <TouchableOpacity onPress={()=>{navigation.goBack()}} style={ScheduledMeetingStyles.back}>
-        <Ionicons name="chevron-back-outline" size={24} color={"white"}/>
-        </TouchableOpacity>
-      <Text style={ScheduledMeetingStyles.text}> Add Scheduled Meeting</Text>
-    </View>
+   <View style={styles.main}>
+       <View style={[styles.gradientContainer, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20 }]}>
+         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+           <TouchableOpacity onPress={()=>{navigation.goBack()}}>
+           <Ionicons name="chevron-back-outline" size={24} color={"white"}/>
+           </TouchableOpacity>
+           <Text style={[styles.containerText, { marginLeft: 50}]}>Add Scheduled Meeting</Text>
+         </View>
+       </View>
+       <View style={styles.whiteContainer}>
     <View style={directVisitStyles.starView}>
  <Text style={ScheduledMeetingStyles.heading}>Company Name</Text>
  <Text style={directVisitStyles.starText}>*</Text>
@@ -68,6 +72,7 @@ const ScheduledMeeting = ({navigation}) => {
  <TouchableOpacity style={ScheduledMeetingStyles.button}>
     <Text style={ScheduledMeetingStyles.buttonText}>SUBMIT</Text>
  </TouchableOpacity>
+    </View>
     </View>
   )
 }
