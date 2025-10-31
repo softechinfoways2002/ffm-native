@@ -50,11 +50,7 @@ marginTop:20
             padding:10
         }
         ,     
-        view:
-        {
-            height:250,
-        },
-        location:
+          location:
         {
          flexDirection:"row",
         

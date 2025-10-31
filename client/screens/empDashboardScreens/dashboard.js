@@ -2,17 +2,13 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import DashboardHome from "./dashboardHome";
-import Meetings from "../meetingScreen/meetings";
 import Profile from "./profile";
 import Colors from '../../constants/color';
-import More from "./more";
-import Reimbursement from "./claims/claims"
 import ClaimStack from "./claims/claimStack";
 import CompanyStack from "./company/CompanyStack";
-import MeetingStack from "../meetingScreen/MeetingStack";
+import MeetingStack from "./meetingScreen/MeetingStack";
 
 const Tab = createBottomTabNavigator();
-
 const Dashboard = () => {
   return (
     <Tab.Navigator

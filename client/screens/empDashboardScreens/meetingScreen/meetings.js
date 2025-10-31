@@ -2,13 +2,14 @@ import {View,Text,FlatList,StyleSheet,TouchableOpacity,Image,Modal
 } from 'react-native';
 import React, { useState } from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import color from '../../constants/color';
-import { date } from '../../constants/date';
+import color from '../../../constants/color';
+import { date } from '../../../constants/date';
 import Octicons from 'react-native-vector-icons/Octicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import OpenReSchedule from './openReSchedule';
-import { MeetingStyles } from '../../styles/meetings/meetingsStyles';
+import { MeetingStyles } from '../../../styles/meetings/meetingsStyles';
+import { styles } from '../../../styles/meetings/meetings';
 const data = [
   {
     id: 1,
@@ -35,7 +36,6 @@ const data = [
     purpose: 'Complaint',
   },
 ];
-
 const Meetings = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -47,7 +47,6 @@ const Meetings = ({ navigation }) => {
     else if (item.Status === 'cancelled') return '#F07373';
     else return null;
   };
-
   const formatDate = (isoDate) => {
     const d = new Date(isoDate);
     const day = d.getDate();
@@ -55,7 +54,6 @@ const Meetings = ({ navigation }) => {
     const year = d.getFullYear();
     return `${day} ${month}, ${year}`;
   };
-
 return (
   <View style={styles.main}>
     <View style={[styles.gradientContainer, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20 }]}>
@@ -83,7 +81,6 @@ return (
                   <Text style={styles.clientName}>🏢 {item.client}</Text>
                   <Text style={{ color: statusColor, fontWeight: '700', marginTop: 10 }}>{item.Status}</Text>
                 </View>
-
                 <Text style={styles.cardAddress}>📍 {item.address}</Text>
                 <Text style={styles.cardPurpose}>Purpose - {item.purpose}</Text>
 
@@ -93,7 +90,6 @@ return (
                     style={styles.reScheduleButton}>
                     <Text style={styles.reScheduleText}>Re-Schedule</Text>
                   </TouchableOpacity>
-
                   <TouchableOpacity onPress={() => navigation.navigate('MeetingDetails')}>
                     <Ionicons name="chevron-forward-outline" color="gray" size={24} style={styles.ion} />
                   </TouchableOpacity>
@@ -114,8 +110,51 @@ return (
       onClose={() => setModalVisible(false)}
       navigation={navigation}
     />
+<Modal
+  visible={visible}
+  transparent
+  animationType="slide"
+  onRequestClose={() => setVisible(false)}>
+  <View style={styles.modalOverlay}>
+    <View style={styles.modalContainer}>
+      <Text style={styles.modalTitle}>Add Meeting</Text>
+      <TouchableOpacity
+        style={[styles.optionButton, { backgroundColor: '#073B77' }]}
+        onPress={() => {
+          setVisible(false);
+          navigation.navigate('MyVisit');
+        }}>
+        <MaterialCommunityIcons name="account-check" size={20} color="white" />
+        <Text style={styles.optionText}>My Visit</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.optionButton, { backgroundColor: '#0A8754' }]}
+        onPress={() => {
+          setVisible(false);
+          navigation.navigate('DirectVisit');
+        }}>
+        <MaterialCommunityIcons name="account-arrow-right" size={20} color="white" />
+        <Text style={styles.optionText}>Direct Visit</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[styles.optionButton, { backgroundColor: '#FF8C00' }]}
+        onPress={() => {
+          setVisible(false);
+          navigation.navigate('ScheduledMeeting');
+        }}>
+        <MaterialCommunityIcons name="calendar-plus" size={20} color="white" />
+        <Text style={styles.optionText}>Scheduled Meeting</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.cancelButton}
+        onPress={() => setVisible(false)}>
+        <Text style={styles.cancelText}>Cancel</Text>
+      </TouchableOpacity>
+    </View>
+  </View>
+</Modal>
     <TouchableOpacity style={MeetingStyles.fab} onPress={() => setVisible(true)}>
-      <AntDesign name="pluscircle" size={60} color={color.primary} />
+      <AntDesign name="pluscircle" size={50} color={color.primary} />
     </TouchableOpacity>
   </View>
 );
@@ -124,163 +163,3 @@ return (
 
 export default Meetings;
 
-const styles = StyleSheet.create({
-  modalOverlay: {
-  flex: 1,
-  backgroundColor: 'rgba(0,0,0,0.5)',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-},
-whiteContainer: {
-  flex: 1,
-  backgroundColor: '#fff',
-  borderTopLeftRadius: 35,
-  borderTopRightRadius: 35,
-  marginTop: -40, 
-  paddingTop: 15,
-  shadowColor: 'gray',
-  shadowOpacity: 1,
-  shadowRadius: 5,
-  elevation: 3,  
-  borderTopWidth: 5,
-  borderTopColor: 'rgba(7, 59, 119, 0.3)', 
-},
-modalContainer: {
-  width: '100%',
-  backgroundColor: 'white',
-  borderTopLeftRadius: 30,
-  borderTopRightRadius: 30,
-  paddingVertical: 25,
-  paddingHorizontal: 20,
-  alignItems: 'center',
-  elevation: 15,
-},
-
-modalTitle: {
-  fontSize: 20,
-  fontWeight: '700',
-  color: color.primary,
-  marginBottom: 20,
-},
-
-optionButton: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '85%',
-  paddingVertical: 12,
-  borderRadius: 15,
-  marginVertical: 8,
-  elevation: 3,
-  shadowColor: '#000',
-  shadowOpacity: 0.2,
-  shadowRadius: 3,
-  gap: 10,
-},
-
-optionText: {
-  color: 'white',
-  fontSize: 16,
-  fontWeight: '600',
-},
-
-cancelButton: {
-  marginTop: 15,
-  paddingVertical: 8,
-  paddingHorizontal: 30,
-  borderRadius: 10,
-},
-
-cancelText: {
-  color: '#777',
-  fontWeight: '800',
-  fontSize: 15,
-},
-  main: { flex: 1, backgroundColor: '#fff' },
-gradientContainer: {
-  height: 150,
-  backgroundColor: color.primary,
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderBottomLeftRadius: 25, 
-  borderBottomRightRadius: 25, 
-  shadowColor: '#000',        
-  shadowOffset: { width: 0, height: 4 },
-  shadowOpacity: 0.3,
-  shadowRadius: 4,
-  elevation: 6,   
-},
-  containerText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: color.textLight,
-    marginBottom: 9,
-    marginLeft: 15,
-  },
-  cardContainer: {
-    marginTop: 20,
-    width: 360,
-    alignItems: 'center',
-  },
-  card: {
-    width: '100%',
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 18,
-    borderWidth: 1,
-    borderColor: '#eee',
-    shadowColor: 'black',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 5,
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  dateBadge: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    backgroundColor: color.primary,
-    borderTopRightRadius: 20,
-    borderBottomLeftRadius: 20,
-    paddingHorizontal: 10,
-    paddingVertical: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 5,
-    elevation: 8,
-  },
-  dateText: {
-    color: 'white',
-    fontSize: 10,
-    fontWeight: '600',
-  },
-  cardHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  clientName: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
-  cardAddress: { fontSize: 15, color: '#6B7280', marginTop: 4, fontWeight: '600' },
-  cardPurpose: { marginTop: 4, color: '#6B7280', fontWeight: '500' },
-  actions: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 10,
-    alignItems: 'center',
-  },
-  reScheduleButton: {
-    width: 120,
-    height: 32,
-    backgroundColor: 'green',
-    justifyContent: 'center',
-    borderRadius: 20,
-  },
-  reScheduleText: {
-    color: 'white',
-    alignSelf: 'center',
-    fontWeight: '600',
-    fontSize: 13,
-  },
-  ion: { marginLeft: 10, marginTop: 8 },
-});

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Modal } from 'react-native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { AddMeetingStyles } from '../../styles/meetings/AddMeeting';
+import { AddMeetingStyles } from '../../../styles/meetings/AddMeeting';
 const AddMeeting = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
 
