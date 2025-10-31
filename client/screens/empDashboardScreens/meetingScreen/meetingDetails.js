@@ -1,10 +1,10 @@
 import { View, Text,StyleSheet,TouchableOpacity } from 'react-native'
 import React from 'react'
 import Ionicons from "react-native-vector-icons/Ionicons"
-import { meetingDetailsStyles } from '../../styles/meetings/meetingDetails'
+import { meetingDetailsStyles } from '../../../styles/meetings/meetingDetails'
 import { TextInput } from 'react-native'
-import { styles } from '../../styles/meetings/meetings'
-const meetingDetails = ({navigation}) => {
+import { styles } from '../../../styles/meetings/meetings'
+const MeetingDetails = ({navigation}) => {
   return (
     <View style={styles.main}>
         <View style={[styles.gradientContainer, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20 }]}>
@@ -50,4 +50,4 @@ const meetingDetails = ({navigation}) => {
   )
 }
 
-export default meetingDetails;
+export default MeetingDetails;

@@ -1,11 +1,11 @@
 import { View, Text ,StyleSheet, TouchableOpacity} from 'react-native'
 import React from 'react'
-import { TextInput } from 'react-native-gesture-handler'
+import { TextInput } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ScheduledMeetingStyles } from '../../styles/meetings/ScheduledMeeting';
-import color from '../../constants/color';
-import { directVisitStyles } from '../../styles/meetings/directVisit';
-import { styles } from '../../styles/meetings/meetings';
+import { ScheduledMeetingStyles } from '../../../styles/meetings/ScheduledMeeting';
+import color from '../../../constants/color';
+import { directVisitStyles } from '../../../styles/meetings/directVisit';
+import { styles } from '../../../styles/meetings/meetings';
 const ScheduledMeeting = ({navigation}) => {
   return (
    <View style={styles.main}>

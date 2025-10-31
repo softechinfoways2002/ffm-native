@@ -1,11 +1,11 @@
 import { View, Text ,StyleSheet, TouchableOpacity,Image} from 'react-native'
 import React from 'react'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { TextInput } from 'react-native-gesture-handler';
+import { TextInput } from 'react-native';
  import MapView, { Marker } from 'react-native-maps';
- import { myVisitStyles } from '../../styles/meetings/myVisit';
- import { directVisitStyles } from '../../styles/meetings/directVisit';
- import { styles } from '../../styles/meetings/meetings';
+ import { myVisitStyles } from '../../../styles/meetings/myVisit';
+ import { directVisitStyles } from '../../../styles/meetings/directVisit';
+ import { styles } from '../../../styles/meetings/meetings';
 const myVisit = ({navigation}) => {
   return (
    <View style={styles.main}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Dashboard_styles } from "../../styles/employee_dashboard/emp_dashboard";
-import { ClaimDetails_styles } from "../../styles/employee_dashboard/claimDetails";
+import { Dashboard_styles } from '../../../styles/employee_dashboard/emp_dashboard';
+import { ClaimDetails_styles } from "../../../styles/employee_dashboard/claimDetails";
 
 const ClaimDetails = (props) => {
   const { claim } = props.route.params; 

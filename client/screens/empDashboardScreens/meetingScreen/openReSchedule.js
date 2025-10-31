@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text,TouchableOpacity,Modal,
   TextInput,
 } from 'react-native';
-import {openReScheduleStyles} from "../../styles/meetings/openSchedule.js"
+import {openReScheduleStyles} from "../../../styles/meetings/openSchedule.js"
 
 const OpenReSchedule = ({ visible, onClose, navigation }) => {
   return (

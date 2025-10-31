@@ -27,7 +27,9 @@ export const Dashboard_styles = StyleSheet.create({
   borderTopColor:Colors.border,
   borderTopWidth:4,
   marginTop:-65,
-  backgroundColor:Colors.background
+  backgroundColor:Colors.background,
+  justifyContent:'center',
+  alignItems:'center'
  },
  userDetails:{
   flexDirection:'row',

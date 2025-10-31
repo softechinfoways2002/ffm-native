@@ -2,14 +2,14 @@ import {View,Text,FlatList,StyleSheet,TouchableOpacity,Image,Modal
 } from 'react-native';
 import React, { useState } from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import color from '../../constants/color';
-import { date } from '../../constants/date';
+import color from '../../../constants/color';
+import { date } from '../../../constants/date';
 import Octicons from 'react-native-vector-icons/Octicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import OpenReSchedule from '../meetingScreen/openReSchedule';
-import { MeetingStyles } from '../../styles/meetings/meetingsStyles';
-import { styles } from '../../styles/meetings/meetings';
+import OpenReSchedule from './openReSchedule';
+import { MeetingStyles } from '../../../styles/meetings/meetingsStyles';
+import { styles } from '../../../styles/meetings/meetings';
 const data = [
   {
     id: 1,
