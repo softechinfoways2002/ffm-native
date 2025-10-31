@@ -9,9 +9,11 @@ import MapView, { Marker } from "react-native-maps";
 import Colors from "../../constants/color.js";
 const DashboardHome = (props) => {
   const styles = Dashboard_styles;
-  const origin = { latitude: 28.6139, longitude: 77.2090 };   // Delhi
-  // const destination = { latitude: 19.0760, longitude: 72.8777 }; // Mumbai
- const GOOGLE_MAPS_API_KEY=""
+  const origin = {
+  latitude: 28.6139,  // Example: Delhi
+  longitude: 77.2090,
+};
+
   return (
 <View style={styles.mainContainer}>
 <View style={styles.gradientContainer}>
