@@ -6,6 +6,7 @@ import { StatusBar } from "react-native";
 import Login from "./screens/authScreens.js/login.js";
 import Register from "./screens/authScreens.js/register.js";
 import Dashboard from "./screens/empDashboardScreens/dashboard.js";
+import OnboardingScreen from "./screens/onBoardingScreens/onboardingscreen.js";
 const App = () => {
   const Stack = createNativeStackNavigator();
   return(
@@ -16,7 +17,8 @@ const App = () => {
           screenOptions={{ headerShown: false }}>
           <Stack.Screen name="login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
-          <Stack.Screen name="dashboard" component={Dashboard} />          
+          <Stack.Screen name="dashboard" component={Dashboard} />  
+          <Stack.Screen name="onboarding" component={OnboardingScreen} />          
         </Stack.Navigator>
       </NavigationContainer>
   );
